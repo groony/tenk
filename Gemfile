@@ -4,12 +4,19 @@ gem 'rails', '4.2.4'
 # Persistence
 gem 'pg'
 
+# Scheduling and background jobs
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem 'sinatra', require: false
+gem 'whenever', require: false
+
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'figaro'
+gem 'ten_thousand_feet'
 
 group :development do
   # Annotate models
