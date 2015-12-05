@@ -5,7 +5,7 @@ module Projects
 
     def perform
       projects = projects_from_api
-      while !projects['paging']['next'].nil? || page == 1
+      while projects['data'].count > 0 || page == 1
         projects['data'].each { |project| create_project(project) }
         @page += 1
         projects = projects_from_api
@@ -15,6 +15,7 @@ module Projects
     private
 
     def create_project(project_from_api)
+      return if Project.exists?(id: project_from_api['id'])
       Project.create(id: project_from_api['id'], name: project_from_api['name'])
     end
 

@@ -9,5 +9,7 @@
 #
 
 class Project < ActiveRecord::Base
+  has_many :projects_users, class_name: Projects::User
+  has_many :users, through: :projects_users
   validates :name, presence: true
 end
