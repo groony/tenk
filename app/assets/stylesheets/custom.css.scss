@@ -2,6 +2,12 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
 .red {
   color: red;
 }
