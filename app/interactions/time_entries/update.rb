@@ -1,7 +1,7 @@
 module TimeEntries
   class Update < ActiveInteraction::Base
     object :time_entry
-    integer :estimate_hours, default: 0
+    float :estimate_hours, default: 0
 
     def execute
       time_entry.assign_attributes(estimate_hours: estimate_hours)
