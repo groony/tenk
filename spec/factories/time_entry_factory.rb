@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :time_entry, class: Projects::User do
+  factory :time_entry do
     project
     user
     spent_hours 0
