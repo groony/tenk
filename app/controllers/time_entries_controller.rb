@@ -3,6 +3,16 @@ class TimeEntriesController < ApplicationController
   def edit
   end
 
+  def update
+    inputs = { time_entry: find_time_entry! }.merge(params[:time_entry])
+    outcome = TimeEntries::Update.run(inputs)
+    if outcome.valid?
+      redirect_to project_path(outcome.result.project)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def find_time_entry!
