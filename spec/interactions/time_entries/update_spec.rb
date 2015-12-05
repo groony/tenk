@@ -3,7 +3,7 @@ require 'rails_helper'
 describe TimeEntries::Update do
   let(:time_entry) { FactoryGirl.create(:time_entry) }
   let(:hours) { 10 }
-  let(:params) { { time_entry: time_entry, scheduled_time: hours } }
+  let(:params) { { time_entry: time_entry, estimate_hours: hours } }
   subject(:outcome) do
     described_class.run params
   end
