@@ -5,7 +5,7 @@ module Users
 
     def perform
       users = users_from_api
-      while !users['paging']['next'].nil? || page == 1
+      while users['data'].count > 0 || page == 1
         users['data'].each { |user| create_user(user) }
         @page += 1
         users = users_from_api
@@ -15,6 +15,7 @@ module Users
     private
 
     def create_user(user_from_api)
+      return if User.exists?(id: user_from_api['id'])
       User.create(id: user_from_api['id'], first_name: user_from_api['first_name'],
                   last_name: user_from_api['last_name'])
     end
