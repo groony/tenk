@@ -15,4 +15,5 @@ class TimeEntry < ActiveRecord::Base
   belongs_to :user, required: true
   belongs_to :project, required: true
   validates :spent_hours, presence: true
+  validates :user_id, uniqueness: { scope: :project_id }
 end
