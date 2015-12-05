@@ -14,5 +14,9 @@ module Projects
     belongs_to :project, required: true
     belongs_to :user, required: true, class_name: '::User'
     validates :user_id, uniqueness: { scope: :project_id }
+
+    def time_entry
+      TimeEntry::find_or_create_by(user: user, project: project)
+    end
   end
 end
