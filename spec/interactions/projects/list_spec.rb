@@ -17,7 +17,7 @@ describe Projects::List do
   it 'should be valid' do
     expect(outcome.valid?).to be(true)
   end
-  it 'should return Relation' do
-    expect(outcome.result).to have_at_least(1).items
+  it 'should return at least 1 project' do
+    expect(outcome.result.count).to be > 0
   end
 end

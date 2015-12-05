@@ -70,6 +70,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-will_paginate (0.0.10)
+      will_paginate
     builder (3.2.2)
     capistrano (3.4.0)
       i18n
@@ -323,6 +325,7 @@ GEM
     unf_ext (0.0.7.1)
     whenever (0.9.4)
       chronic (>= 0.6.3)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -333,6 +336,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap-will_paginate
   coffee-rails (~> 4.1.0)
   factory_girl_rails
   faker
