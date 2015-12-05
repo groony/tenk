@@ -1,4 +1,4 @@
-h2 = "#{@time_entry.project.name} | #{@time_entry.user.full_name}"
+h2 = link_to(@time_entry.project.name, @time_entry.project) + " | #{@time_entry.user.full_name}"
 = form_for @time_entry, url: { action: 'update' } do |f|
   .field
     = label_tag(:estimate_hours, 'Запланировано часов')
