@@ -12,7 +12,7 @@
 module Projects
   class User < ActiveRecord::Base
     belongs_to :project, required: true
-    belongs_to :user, required: true, class_name: ::User
+    belongs_to :user, required: true, class_name: '::User'
     validates :user_id, uniqueness: { scope: :project_id }
   end
 end
