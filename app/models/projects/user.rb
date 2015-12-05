@@ -16,7 +16,7 @@ module Projects
     validates :user_id, uniqueness: { scope: :project_id }
 
     def time_entry
-      TimeEntry::find_or_create_by(user: user, project: project)
+      TimeEntry.find_or_create_by(user: user, project: project)
     end
   end
 end
