@@ -13,14 +13,14 @@ module Projects
       def process_project(project)
         projects_users = projects_users_from_api(project.id)
         while projects_users['data'].count > 0 || page == 1
-          process_projects_users_form_api(projects_users['data'], project)
+          process_projects_users_from_api(projects_users['data'], project)
           @page += 1
           projects_users = projects_users_from_api(project.id)
         end
         @page = 1
       end
 
-      def process_projects_users_form_api(users, project)
+      def process_projects_users_from_api(users, project)
         uniq_users = users.uniq { |u| u['id'] }
         uniq_users.each { |user| create_projects_user(user, project) }
       end

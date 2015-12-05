@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205161448) do
+ActiveRecord::Schema.define(version: 20151205180753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20151205161448) do
   add_index "projects_users", ["project_id"], name: "index_projects_users_on_project_id", using: :btree
   add_index "projects_users", ["user_id"], name: "index_projects_users_on_user_id", using: :btree
 
+  create_table "time_entries", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.float    "spent_hours"
+    t.float    "estimate_hours"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "time_entries", ["project_id"], name: "index_time_entries_on_project_id", using: :btree
+  add_index "time_entries", ["user_id"], name: "index_time_entries_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -41,4 +53,6 @@ ActiveRecord::Schema.define(version: 20151205161448) do
 
   add_foreign_key "projects_users", "projects"
   add_foreign_key "projects_users", "users"
+  add_foreign_key "time_entries", "projects"
+  add_foreign_key "time_entries", "users"
 end
