@@ -15,8 +15,11 @@ gem 'bootstrap-sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'bootstrap-will_paginate'
+gem 'slim-rails'
 gem 'figaro'
 gem 'ten_thousand_feet'
+gem 'active_interaction', '~> 2.1'
 
 group :development do
   # Annotate models

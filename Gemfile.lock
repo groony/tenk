@@ -33,6 +33,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_interaction (2.1.4)
+      activemodel (>= 3.2, < 5)
     activejob (4.2.4)
       activesupport (= 4.2.4)
       globalid (>= 0.3.0)
@@ -68,6 +70,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-will_paginate (0.0.10)
+      will_paginate
     builder (3.2.2)
     capistrano (3.4.0)
       i18n
@@ -292,6 +296,15 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    slim (3.0.6)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
+    slim-rails (3.0.1)
+      actionmailer (>= 3.1, < 5.0)
+      actionpack (>= 3.1, < 5.0)
+      activesupport (>= 3.1, < 5.0)
+      railties (>= 3.1, < 5.0)
+      slim (~> 3.0)
     slop (3.6.0)
     sprockets (3.5.0)
       concurrent-ruby (~> 1.0)
@@ -303,6 +316,7 @@ GEM
     sshkit (1.8.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    temple (0.7.6)
     ten_thousand_feet (0.2.0.0)
       rest-client
     thor (0.19.1)
@@ -321,15 +335,18 @@ GEM
     unf_ext (0.0.7.1)
     whenever (0.9.4)
       chronic (>= 0.6.3)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_interaction (~> 2.1)
   annotate
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap-will_paginate
   coffee-rails (~> 4.1.0)
   factory_girl_rails
   faker
@@ -351,6 +368,7 @@ DEPENDENCIES
   sidekiq
   sidekiq-failures
   sinatra
+  slim-rails
   snp-best-practices!
   ten_thousand_feet
   uglifier (>= 1.3.0)
