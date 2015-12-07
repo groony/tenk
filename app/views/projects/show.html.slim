@@ -14,6 +14,6 @@ table class='table table-hover'
     tr
       td = project_user.user.id
       td = link_to project_user.user.full_name, edit_time_entry_path(project_user.time_entry)
-      td = project_user.time_entry.estimate_hours.to_f
-      td = project_user.time_entry.spent_hours
+      td = estimate_hours
+      td = spent_hours
       td class="#{difference_klass}" = difference
