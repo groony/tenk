@@ -2,8 +2,18 @@ table class='table table-hover'
   tr
     th ID
     th Название
+    th Запланировано часов
+    th Потрачено часов
+    th Разница
     - @projects.each_with_index do |project, index|
+      - estimate_hours = project.time_entries.sum(:estimate_hours)
+      - spent_hours = project.time_entries.sum(:spent_hours)
+      - difference = estimate_hours - spent_hours
+      - difference_klass = (difference < 0) ? 'red' : 'green'
       tr
         td = project.id
         td = link_to project.name, project
+        td = estimate_hours
+        td = spent_hours
+        td class="#{difference_klass}" = difference
 = will_paginate
