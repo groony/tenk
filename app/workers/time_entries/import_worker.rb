@@ -35,7 +35,8 @@ module TimeEntries
     end
 
     def time_entries_from_api(user_id, options)
-      client.get_assignments(user_id, options.merge(page: page, per_page: 100))
+      options.merge!(page: page, per_page: 100, to: Time.zone.now.strftime('%F'))
+      client.get_assignments(user_id, options)
     end
 
     def client
