@@ -38,7 +38,11 @@ group :development do
 
   gem 'rspec-rails'
 
+  # Deploy
   gem 'snp-best-practices', git: 'git@git.snpdev.ru:saltpepper/snp-best-practices.git'
+  gem 'capistrano-sidekiq'
+  gem 'capistrano3-puma'
+
   gem 'better_errors'
   gem 'binding_of_caller'
 end
