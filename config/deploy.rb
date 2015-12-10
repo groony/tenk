@@ -1,6 +1,7 @@
 # Set here your application name and git repository
 set :application, 'tenk'
 set :repo_url, 'git@github.com:groony/tenk.git'
+set :rbenv_ruby, '2.2.2'
 set :linked_files, %w(config/application.yml)
 set :linked_dirs, fetch(:linked_dirs, []) + %w(public/uploads)
 
